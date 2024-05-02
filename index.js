@@ -11,11 +11,11 @@ const generateMarkdown = require (`./util/generateMarkdown`);
 const questions = [{
     type: "input",
     message: "Whats the title?",
-    name : "Title"
+    name : "title"
 },{ 
      type: "input",
      message: "what is this project about? Give a detailed description",
-     name : "Description"
+     name : "description"
 },{
     type: "input", 
     message : "Table of Contents.",
@@ -23,7 +23,7 @@ const questions = [{
 },{
     type: "input",
     message : "What do you need to install to run this app",
-    name: "Installation Instructions"
+    name: "installation"
 },{
     type: "input",
     message :"How is the App being used? ",
@@ -32,30 +32,25 @@ const questions = [{
 },{ //use checkbox and an array for options
     type: "checkbox",
     message: " What license is being used? ",
-    name: "License",
+    name: "license",
     choices: ["MIT","Apache2.0","Boost1.0"]
 },{
     type:"input",
     message: "Who contributed to the project?",
-    name: "Contribution"
+    name: "contribution"
 },{
     type: "input",
     message:"What is needed to Test the app",
-    name: "Test"
-},{
-    type: "input",
-    message: "Contact Info",
-    name: "Questions"
-
-},{
+    name: "test"
+},,{
     // add github username
     type: "input",
     message:"Github Username",
-    name: "Username"
+    name: "github"
 },{
     type: "input",
     message:"What is your Email?",
-    name:"Email Address"
+    name:"email"
 },
 ];
 
@@ -68,7 +63,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log("Create ReadMe.md File...");
-        writeToFile("./dist/readme.md",generateMarkdown({...responses}) );
+        writeToFile("./dist/ReadMe.md",generateMarkdown({...responses}) );
       });
 };
 
