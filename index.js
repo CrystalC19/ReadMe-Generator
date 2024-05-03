@@ -27,7 +27,7 @@ const questions = [{
 },{
     type: "input",
     message :"How is the App being used? ",
-    name: "usage info",
+    name: "usageinfo",
    
 },{ //use checkbox and an array for options
     type: "checkbox",
@@ -42,11 +42,11 @@ const questions = [{
     type: "input",
     message:"What is needed to Test the app",
     name: "test"
-},,{
+},{
     // add github username
     type: "input",
     message:"Github Username",
-    name: "github"
+    name: "githubun"
 },{
     type: "input",
     message:"What is your Email?",
@@ -62,8 +62,8 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((responses) => {
-        console.log("Create ReadMe.md File...");
-        writeToFile("./dist/ReadMe.md",generateMarkdown({...responses}) );
+        console.log("Create README.md File...");
+        writeToFile("./cc/README.md",generateMarkdown({...responses}) );
       });
 };
 
